@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+  .scroll-snap-y{
+    scroll-snap-type: y mandatory;
+  }
+  .scroll-snap-align{
+    scroll-snap-align: start;
+  }
+  .responsive-grid{
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
+  }
+  .responsive-grid2{
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr))
+  }
+}
+
+@layer base {
+  *{
+    @apply m-0 p-0 box-border font-sans transition-all duration-500 ease-in-out outline-none
+  }
+
+  *::selection{
+    @apply bg-primary text-white
+  }
+
+  html{
+    @apply overflow-x-hidden bg-black-100 text-white
+  }
+  html::-webkit-scrollbar{
+    @apply w-2
+  }
+  .noScroll::-webkit-scrollbar{
+    @apply w-1
+  }
+  html::-webkit-scrollbar-track,
+  .noScroll::-webkit-scrollbar-track{
+    @apply bg-black-300
+  }
+  html::-webkit-scrollbar-thumb,
+  .noScroll::-webkit-scrollbar-thumb{
+    @apply bg-primary
+  }
+  body{
+    @apply px-2 sm:pl-5 md:pl-20 lg:pl-96
+  }
+}
+
+@layer components{
+  .nav-btn{
+    @apply block w-full bg-black-300 rounded-full p-2 mt-3 hover:bg-primary
+  }
+}

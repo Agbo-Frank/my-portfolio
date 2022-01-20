@@ -1,0 +1,26 @@
+import { FaUser } from "react-icons/fa";
+
+function Home(){
+    return(
+        <div id="home" className="h-screen w-full scroll-snap-align">
+            <div className="h-full w-full px-2 sm:px-10 lg:pl-16 xl:pl-36 flex justify-center items-center flex-col text-left ">
+                <p className="self-start text-xl font-semibold">HELLO THERE!</p>
+                <h1 className="self-start text-4xl font-bold my-2">I'M <span className="text-primary">AGBO FRANK</span></h1>
+                <p className="text-left my-4">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Dignissimos odio culpa commodi cupiditate debitis illum beatae
+                    Dignissimos odio culpa commodi cupiditate debitis illum beatae
+                    Dignissimos odio culpa commodi cupiditate debitis illum beatae
+                    Dignissimos odio culpa commodi cupiditate debitis illum beatae 
+                    voluptates quae. Commodi, illo?
+                </p>
+                <a href="#about" className="self-start flex gap-2 bg-black-300 rounded-full px-7 py-1 justify-center items-start hover:bg-primary">
+                    About Me 
+                    <FaUser className="text-sm self-center"/>
+                </a>
+            </div>
+        </div>
+    )
+}
+
+export default Home
