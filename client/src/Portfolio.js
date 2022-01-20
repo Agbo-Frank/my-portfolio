@@ -30,7 +30,7 @@ function Portfolio(){
                         <div className="w-full py-4 px-2  text-sm text-center">
                             <h1 className="font-bold text-sm hidden group-hover:block">Glass</h1>
                             <p className="hidden text-xs group-hover:block">This is an E-commerce Site where one can buy and His or Her glasses</p>
-                            <a href="/" className="hidden group-hover:block border border-solid border-white rounded-full px-3 py-1 text-xs hover:bg-white hover:text-black-100" >preview <i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a href="/" className="hidden group-hover:block border border-solid border-white rounded-full px-3 py-1 text-xs hover:bg-white hover:text-black-100" >preview <i className="fa fa-eye"></i></a>
                         </div>
                     </div>
                     {/* <a className="absolute block bg-black-300 w-7 h-7 hover:w-14 p-1 rounded-full left-0 top-0 m-3" href="www.google.com" target="_blank" rel="noreferrer"><FaGithub className="text-xl"/></a> */}

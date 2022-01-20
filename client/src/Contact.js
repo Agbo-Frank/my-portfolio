@@ -24,24 +24,21 @@ function Contact({ setMessages }){
             projectName,
             message
         }
-        let body = JSON.stringify(docs),
+        let body = JSON.stringify(docs)
         let res = await axios.post('/', body, {headers: {"Content-Type": "application/json"}})
-        let data = await res.json()
-        console.log(data);
-        if(data.message){
+        
+        if(res.status === 200){
             setName('')
             setProjectName('')
             setEmail('')
             setMessage('')
             setLoading(false)
             await setTimeout(() => setMessages(''), 5000);
-            return setMessages(data.message)
+            return setMessages(res.data.message)
         }
-        if(data.err){
-            setLoading(false)
-            await setTimeout(() => setMessages(''), 5000);
-            return setMessages('Something went wrong while sending Please Try sending again')
-        }
+        setLoading(false)
+        await setTimeout(() => setMessages(''), 5000);
+        return setMessages('Something went wrong while sending Please Try sending again')
     }
     return(
 
