@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const cors = require('cors')
 require('dotenv').config()
 
 const accountSid = process.env.ACCOUNTSID;
@@ -10,6 +11,7 @@ const port = process.env.PORT || 5500
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 app.post('/', async (req, res) => {
