@@ -14,8 +14,11 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.post('/', async (req, res) => {
+app.post('/', (req, res) => {
   let {name, email, projectName, message} = req.body
+  if(!name || !message){
+    return res.status(400).json({ err: "Please enter either your name or message" })
+  }
   client.messages
     .create({
        body: `
@@ -28,12 +31,12 @@ app.post('/', async (req, res) => {
        to: process.env.LOCALNUM
      })
       .then(message => {
-        res.status(200).json({
+       return  res.status(200).json({
           message: `Hi ${name}, 
         Thank You For Reaching Out To Me I will get Back to you has Soon as possible`
       })
       .catch(err => {
-        res.status(400).json({ err })
+        return res.status(400).json({ err })
       })
     });
 })

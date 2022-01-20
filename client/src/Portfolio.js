@@ -27,10 +27,10 @@ function Portfolio(){
             <div className="overflow-x-hidden gap-6 noScroll my-10">
                 <div className="group relative bg-primary flex items-center justify-center w-36 h-44 rounded-md overflow-hidden">
                     <div className="absolute left-0 top-0 w-full h-0 flex transition-height duration-700 group-hover:h-full bg-black-100 bg-opacity-25 justify-center items-center">
-                        <div className="w-full p-6  text-sm text-center">
+                        <div className="w-full py-4 px-2  text-sm text-center">
                             <h1 className="font-bold text-sm hidden group-hover:block">Glass</h1>
                             <p className="hidden text-xs group-hover:block">This is an E-commerce Site where one can buy and His or Her glasses</p>
-                            <a href="/" className="hidden group-hover:block border border-solid border-white rounded-full px-5 py-3 text-xs hover:bg-white" >preview <i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <a href="/" className="hidden group-hover:block border border-solid border-white rounded-full px-3 py-1 text-xs hover:bg-white hover:text-black-100" >preview <i class="fa fa-eye" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     {/* <a className="absolute block bg-black-300 w-7 h-7 hover:w-14 p-1 rounded-full left-0 top-0 m-3" href="www.google.com" target="_blank" rel="noreferrer"><FaGithub className="text-xl"/></a> */}

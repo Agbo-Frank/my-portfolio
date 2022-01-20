@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios'
 import { FaEnvelope, FaPhone, FaWhatsapp, FaPaperPlane } from "react-icons/fa";
 
 function Contact({ setMessages }){
@@ -11,21 +12,22 @@ function Contact({ setMessages }){
     async function submit(e){
         e.preventDefault()
         setLoading(true)
+
+        if(!name || !message){
+            await setTimeout(() => setMessages(''), 5000);
+            setLoading(false)
+            return setMessages("Please enter either your name or message")
+        }
         let docs = {
             name,
             email,
             projectName,
             message
         }
-
-        let res = await fetch('/', {
-            method: "POST",
-            body: JSON.stringify(docs),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
+        let body = JSON.stringify(docs),
+        let res = await axios.post('/', body, {headers: {"Content-Type": "application/json"}})
         let data = await res.json()
+        console.log(data);
         if(data.message){
             setName('')
             setProjectName('')
