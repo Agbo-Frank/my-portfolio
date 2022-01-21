@@ -12,11 +12,27 @@ function SideBar({ toggleSideBar, setToggleSideBar }){
                 <p className="text-lg">Web Developer</p>
             </div>
             <ul className="w-full px-10 py-4 mb-3">
-                <li className="w-full"><a href="#home" className="nav-btn">Home</a></li>
-                <li className="w-full"><a href="#About" className="nav-btn">About</a></li>
+                <li 
+                onClick={() => setToggleSideBar(false)} 
+                className="w-full">
+                    <a href="#home" className="nav-btn">Home</a>
+                </li>
+                <li 
+                onClick={() => setToggleSideBar(false)} 
+                className="w-full">
+                    <a href="#About" className="nav-btn">About</a>
+                </li>
                 {/* <li className="w-full"><a href="#Eduction" className="nav-btn">Eduction</a></li> */}
-                <li className="w-full"><a href="#Portfolio" className="nav-btn">Portfolio</a></li>
-                <li className="w-full"><a href="#Contact" className="nav-btn">Contact</a></li>
+                <li 
+                className="w-full"
+                onClick={() => setToggleSideBar(false)}>
+                    <a href="#Portfolio" className="nav-btn">Portfolio</a>
+                </li>
+                <li 
+                className="w-full" 
+                onClick={() => setToggleSideBar(false)}>
+                    <a href="#Contact" className="nav-btn">Contact</a>
+                </li>
             </ul>
         </header>
     )

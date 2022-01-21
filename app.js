@@ -16,6 +16,7 @@ app.use(express.json())
 
 app.post('/', (req, res) => {
   let {name, email, projectName, message} = req.body
+  console.log(req.body)
   if(!name || !message){
     return res.status(400).json({ err: "Please enter either your name or message" })
   }
@@ -31,11 +32,13 @@ app.post('/', (req, res) => {
        to: process.env.LOCALNUM
      })
       .then(message => {
+        console.log(message)
        return  res.status(200).json({
           message: `Hi ${name}, 
         Thank You For Reaching Out To Me I will get Back to you has Soon as possible`
       })
       .catch(err => {
+        console.log(err)
         return res.status(400).json({ err })
       })
     });
