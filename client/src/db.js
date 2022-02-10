@@ -24,6 +24,10 @@ const skills = [
     {
         img: images.mongodb,
         name: "MONGODB"
+    },
+    {
+        img: images.typescript,
+        name: "TYPESCRIPT"
     }
 ]
 

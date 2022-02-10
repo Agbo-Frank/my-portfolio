@@ -6,6 +6,7 @@ const images = {
     node: require('./nodejs-icon.svg').default,
     tailwind: require('./tailwindcss.svg').default,
     mongodb: require('./mongodb-icon-1.svg').default,
+    typescript: require('./typescript.svg').default
 }
 
 export default images

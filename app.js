@@ -15,7 +15,7 @@ app.use(cors())
 app.use(express.json())
 
 app.post('/', (req, res) => {
-  req.setTimeout(400);
+  req.setTimeout(28000);
   let {name, email, projectName, message} = req.body
   console.log(req.body)
   if(!name || !message){
