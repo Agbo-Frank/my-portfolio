@@ -7,12 +7,12 @@ function Home(){
                 <p className="self-start text-xl font-semibold">HELLO THERE!</p>
                 <h1 className="self-start text-4xl font-bold my-2">I'M <span className="text-primary">AGBO FRANK</span></h1>
                 <p className="text-left my-4">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                    Dignissimos odio culpa commodi cupiditate debitis illum beatae
-                    Dignissimos odio culpa commodi cupiditate debitis illum beatae
-                    Dignissimos odio culpa commodi cupiditate debitis illum beatae
-                    Dignissimos odio culpa commodi cupiditate debitis illum beatae 
-                    voluptates quae. Commodi, illo?
+                    I started my journey as a Front End Developer in February 2018 and since 
+                    then I've been able to learn a lot and grow myself. I code for fun and build 
+                    amazingly beautiful and simple things as a hobby. I Pay attention to best practices 
+                    known to me and I'm always open to learn new things and take on challenging paths.
+                    Apart from web developement, I also pay attention to AI and IoT and also spend my 
+                    free time doing other geeky stuff.
                 </p>
                 <a href="#about" className="self-start flex gap-2 bg-black-300 rounded-full px-7 py-1 justify-center items-start hover:bg-primary">
                     About Me 
