@@ -8,9 +8,8 @@
   },
   "scripts": {
     "install-client": "cd client && npm install",
-    "build": "cd client && npm run build",
     "server": "nodemon app.js",
-    "client": "cd client && npm start",
+    "client": "cd client && npm run build && npm start",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
