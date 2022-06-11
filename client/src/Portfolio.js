@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import img from "./img/icon-1.png"
 import fxLogo from "./img/fxmega-min.png"
+import AKLogo from "./img/akawo_logo.png"
 import { settings } from "./config";
 import { FaGithub } from "react-icons/fa"
 
@@ -43,6 +44,12 @@ function Portfolio(){
             link="https://fxmega.net" 
             img={fxLogo} 
             text="This is an Crypto site where you can exchange your coins" />
+
+            <Project 
+            title="Akawo" 
+            link="https://documenter.getpostman.com/view/17567046/UVkiSya5" 
+            img={AKLogo} 
+            text="An API documentation of a contribution app(Akawo)" />
             </div>
         </div>
         </>

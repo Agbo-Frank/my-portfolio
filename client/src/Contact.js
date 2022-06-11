@@ -1,29 +1,23 @@
 import { useState } from "react";
 import axios from 'axios'
+import 'dotenv/config'
 import { FaEnvelope, FaPhone, FaWhatsapp, FaPaperPlane } from "react-icons/fa";
 
-const KULLSMS_USERNAME = process.env.KULLSMS_USERNAME;
-const KULLSMS_PASSWORD = process.env.KULLSMS_PASSWORD;
-const KULLSMS_SENDER = process.env.KULLSMS_SENDER;
-const NUMBER = process.env.NUMBER;
+const KULLSMS_USERNAME = process.env.REACT_APP_KULLSMS_USERNAME;
+const KULLSMS_PASSWORD = process.env.REACT_APP_KULLSMS_PASSWORD;
+const KULLSMS_SENDER = process.env.REACT_APP_KULLSMS_SENDER;
+const NUMBER = process.env.REACT_APP_NUMBER;
 
-const sendSMS = (text) => {
-    console.log(text)
-    return axios.get(
-        `https://kullsms.com/customer/api/?username=${KULLSMS_USERNAME}&password=${KULLSMS_PASSWORD}&message=${text}&sender=${KULLSMS_SENDER}&mobiles=${NUMBER}`
-        )
-            .then(res => {
-                if(res.data === 1703){
-                    throw "invalid phone number"
-                }
-                else if(res.data !== 1701 ){
-                    throw "code not sent"
-                }
-                return res.data
-            })
-            .catch(err => {
-                throw err
-            })
+const sendSMS = async (text) => {
+    const url = `https://kullsms.com/customer/api/?username=${KULLSMS_USERNAME}&password=${KULLSMS_PASSWORD}`
+
+    let balance = await axios.get(`${url}&request=balance`)
+    if (balance.data <= 10){
+        await axios.get(`${url}&message=Low Credit please recharge&sender=${KULLSMS_SENDER}&mobiles=${NUMBER}`)
+    }
+    else{
+        await axios.get(`${url}&message=${text}&sender=${KULLSMS_SENDER}&mobiles=${NUMBER}`)
+    }
 }
 
 
@@ -50,21 +44,14 @@ function Contact({ setMessages }){
             projectName -> ${projectName};
             message -> ${message}`
 
-            let res = await sendSMS(sms)
+            await sendSMS(sms)
 
-            if(res.status === 200){
-                setName(''); setProjectName('');
-                setEmail(''); setMessage('');
-                setLoading(false)
+            setName(''); setProjectName('');
+            setEmail(''); setMessage('');
+            setLoading(false)
 
-                await setTimeout(() => setMessages(''), 5000);
-                return setMessages(res.data.message)
-            }
-            else{
-                setLoading(false)
-                await setTimeout(() => setMessages(''), 5000);
-                return setMessages('Something went wrong while sending Please Try sending again')
-            }
+            await setTimeout(() => setMessages(''), 5000);
+            return setMessages('message sent')
         }
     }
     return(
