@@ -14,7 +14,9 @@ function Home(){
                     Apart from web developement, I also pay attention to AI and IoT and also spend my 
                     free time doing other geeky stuff.
                 </p>
-                <a href="#about" className="self-start flex gap-2 bg-black-300 rounded-full px-7 py-1 justify-center items-start hover:bg-primary">
+                <a 
+                href="https://docs.google.com/document/d/19_QTlrY98E-lqQAhZ-cVRilOwOnKawr0gmmN8YrdtR4/edit?usp=sharing" 
+                className="self-start flex gap-2 bg-black-300 rounded-full px-7 py-1 justify-center items-start hover:bg-primary">
                     About Me 
                     <FaUser className="text-sm self-center"/>
                 </a>
