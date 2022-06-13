@@ -9,14 +9,21 @@ const KULLSMS_SENDER = process.env.REACT_APP_KULLSMS_SENDER;
 const NUMBER = process.env.REACT_APP_NUMBER;
 
 const sendSMS = async (text) => {
-    const url = `https://kullsms.com/customer/api/?username=${KULLSMS_USERNAME}&password=${KULLSMS_PASSWORD}`
+    let config = {
+        headers: {
+            "Access-Control-Allow-Origin": '*',
+            "Access-Control-Allow-Credentials": true,
+            "Content-Type": "application/json"
+        }
+    }
+    const url = `?username=${KULLSMS_USERNAME}&password=${KULLSMS_PASSWORD}`
 
-    let balance = await axios.get(`${url}&request=balance`)
-    if (balance.data <= 10){
-        await axios.get(`${url}&message=Low Credit please recharge&sender=${KULLSMS_SENDER}&mobiles=${NUMBER}`)
+    let balance = await axios.get(`${url}&request=balance`, config)
+    if (balance <= 10){
+        await axios.get(`${url}&message=Low Credit please recharge&sender=${KULLSMS_SENDER}&mobiles=${NUMBER}`, config)
     }
     else{
-        await axios.get(`${url}&message=${text}&sender=${KULLSMS_SENDER}&mobiles=${NUMBER}`)
+        await axios.get(`${url}&message=${text}&sender=${KULLSMS_SENDER}&mobiles=${NUMBER}`, config)
     }
 }
 

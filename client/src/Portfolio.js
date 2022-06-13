@@ -8,8 +8,8 @@ import { FaGithub } from "react-icons/fa"
 
 function Project({title, text, img, link}){
     return(
-        <div className="overflow-x-hidden gap-6 noScroll my-10">
-            <div className="group relative bg-primary flex items-center justify-center w-36 h-44 rounded-md overflow-hidden">
+        <div className="overflow-x-hidden noScroll">
+            <div className="group relative bg-primary flex items-center justify-center w-full md:w-36 h-44 rounded-md overflow-hidden">
                 <div className="absolute left-0 top-0 w-full h-0 flex transition-height duration-700 group-hover:h-full bg-black-100 bg-opacity-25 justify-center items-center">
                     <div className="w-full py-4 px-2  text-sm text-center">
                         <h1 className="font-bold text-sm hidden group-hover:block">{ title }</h1>
@@ -30,8 +30,8 @@ function Portfolio(){
     return(
         <>
         <div className="w-full px-2 sm:px-10 my-18 md:py-7 md:pl-0 lg:pl-16 xl:pl-32 scroll-snap-align" id="Portfolio">
-            <h1 className="text-primary font-bold text-4xl width-full text-center py-5 px-2 border-solid border-primary border-b">My <span className="text-white">Portfolio</span></h1>
-            <div className="flex  overflow-x-hidden gap-6 noScroll my-10">
+            <h1 className="text-primary font-bold text-4xl width-full text-center py-5 px-2 border-solid border-primary border-b mb-12">My <span className="text-white">Portfolio</span></h1>
+            <div className="grid responsive-grid2 md:flex md:flex-nowrap gap-0 overflow-x-hidden gap-6 noScroll">
 
             <Project 
             title="Glass" 

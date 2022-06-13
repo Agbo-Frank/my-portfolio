@@ -22,6 +22,10 @@ const skills = [
         name: "NODE JS"
     },
     {
+        img: images.laravel,
+        name: "LARAVEL"
+    },
+    {
         img: images.mongodb,
         name: "MONGODB"
     },

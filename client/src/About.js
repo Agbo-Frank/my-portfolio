@@ -1,4 +1,6 @@
 import Skills from "./Skills"
+import { skills } from './db'
+
 
 function About(){
     function Box({num, text}){
@@ -15,8 +17,14 @@ function About(){
             <div className="flex justify-between my-4 flex-col gap-10 sm:flex-row">
                 <div className="space-y-4 w-full sm:w-1/2">
                     <p className="font-semibold"><span>Name:</span> <span className="text-primary ml-2">Agbo Frank</span></p>
-                    <p className="font-semibold"><span>Age:</span> <span className="text-primary ml-2">21</span></p>
-                    <p className="font-semibold"><span>stack:</span> <p className="inline ml-2"><span className="text-blue">React.js</span> / <span className="text-green-100">MongoDB</span> / <span className="text-green-200">Node.js</span> </p></p>
+                    <p className="font-semibold">
+                        <span>stack:</span> 
+                            <p className="inline ml-2">
+                                {
+                                    skills.map(s => (
+                                        <span className="capitalize text-sm">{ s.name } / </span> 
+                                    ))
+                                }</p></p>
                     <p className="font-semibold"><span>Language:</span> <span className="text-primary ml-2">Igbo, Yoruba English</span></p>
                 </div>
                 <div className="w-full sm:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
