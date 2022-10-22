@@ -28,7 +28,7 @@ function About(){
                     <p className="font-semibold"><span>Language:</span> <span className="text-primary ml-2">Igbo, Yoruba English</span></p>
                 </div>
                 <div className="w-full sm:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <Box num="2+" text="Years of Experience" />
+                    <Box num="3+" text="Years of Experience" />
                     <Box num="5+" text="Projects Completed" />
                     {/* <Box num="140+" text="Happy Customers" /> */}
                     {/* <Box num="10+" text="Awards Won"/> */}

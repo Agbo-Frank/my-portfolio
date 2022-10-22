@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import img from "./img/icon-1.png"
+import flexipay from "./img/flexipay.png"
 import fxLogo from "./img/fxmega-min.png"
 import AKLogo from "./img/akawo_logo.png"
 import { settings } from "./config";
@@ -32,6 +33,13 @@ function Portfolio(){
         <div className="w-full px-2 sm:px-10 my-18 md:py-7 md:pl-0 lg:pl-16 xl:pl-32 scroll-snap-align" id="Portfolio">
             <h1 className="text-primary font-bold text-4xl width-full text-center py-5 px-2 border-solid border-primary border-b mb-12">My <span className="text-white">Portfolio</span></h1>
             <div className="grid responsive-grid2 md:flex md:flex-nowrap gap-0 overflow-x-hidden gap-6 noScroll">
+
+
+            <Project 
+            title="Flexipay" 
+            link="https://flexipay.ng" 
+            img={flexipay} 
+            text="This is an E-commerce Site where one can buy and sell any product by paying installmentally or instantly" />
 
             <Project 
             title="Glass" 
