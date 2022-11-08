@@ -3,6 +3,7 @@ import img from "./img/icon-1.png"
 import flexipay from "./img/flexipay.png"
 import fxLogo from "./img/fxmega-min.png"
 import AKLogo from "./img/akawo_logo.png"
+import GotahiaLogo from "./img/gotahia.png"
 import { settings } from "./config";
 import { FaGithub } from "react-icons/fa"
 
@@ -10,7 +11,7 @@ import { FaGithub } from "react-icons/fa"
 function Project({title, text, img, link}){
     return(
         <div className="overflow-x-hidden noScroll">
-            <div className="group relative bg-primary flex items-center justify-center w-full md:w-36 h-44 rounded-md overflow-hidden">
+            <div className="group relative bg-primary flex items-center justify-center w-full md:w-[150px] h-44 rounded-md overflow-hidden">
                 <div className="absolute left-0 top-0 w-full h-0 flex transition-height duration-700 group-hover:h-full bg-black-100 bg-opacity-25 justify-center items-center">
                     <div className="w-full py-4 px-2  text-sm text-center">
                         <h1 className="font-bold text-sm hidden group-hover:block">{ title }</h1>
@@ -32,32 +33,43 @@ function Portfolio(){
         <>
         <div className="w-full px-2 sm:px-10 my-18 md:py-7 md:pl-0 lg:pl-16 xl:pl-32 scroll-snap-align" id="Portfolio">
             <h1 className="text-primary font-bold text-4xl width-full text-center py-5 px-2 border-solid border-primary border-b mb-12">My <span className="text-white">Portfolio</span></h1>
-            <div className="grid responsive-grid2 md:flex md:flex-nowrap gap-0 overflow-x-hidden gap-6 noScroll">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
 
 
             <Project 
-            title="Flexipay" 
-            link="https://flexipay.ng" 
-            img={flexipay} 
-            text="This is an E-commerce Site where one can buy and sell any product by paying installmentally or instantly" />
+                title="Flexipay" 
+                link="https://flexipay.ng" 
+                img={flexipay} 
+                text="This is an E-commerce Site where one can buy and sell any product by paying installmentally or instantly" 
+            />
 
             <Project 
-            title="Glass" 
-            link="https://glass-app-1.herokuapp.com" 
-            img={img} 
-            text="This is an E-commerce Site where one can buy and His or Her glasses" />
+                title="Gotahia" 
+                link="https://www.gotahia.com/" 
+                img={GotahiaLogo} 
+                text="This is an online market where you can meet wholesalers and importers and buy from them without going to the market" 
+            />
 
             <Project 
-            title="Fx Mega" 
-            link="https://fxmega.net" 
-            img={fxLogo} 
-            text="This is an Crypto site where you can exchange your coins" />
+                title="Akawo" 
+                link="https://akawo.me/" 
+                img={AKLogo} 
+                text="An API documentation of a contribution app(Akawo)" 
+            />
 
             <Project 
-            title="Akawo" 
-            link="https://documenter.getpostman.com/view/17567046/UVkiSya5" 
-            img={AKLogo} 
-            text="An API documentation of a contribution app(Akawo)" />
+                title="Glass" 
+                link="https://glass-app-1.herokuapp.com" 
+                img={img} 
+                text="This is an E-commerce Site where one can buy and His or Her glasses" 
+            />
+
+            <Project 
+                title="Fx Mega" 
+                link="https://fxmega.net" 
+                img={fxLogo} 
+                text="This is an Crypto site where you can exchange your coins" 
+            />
             </div>
         </div>
         </>
